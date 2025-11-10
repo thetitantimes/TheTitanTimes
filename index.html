@@ -4,33 +4,39 @@
   <meta charset="UTF-8" />
   <title>Titan Times | University High School – Orange City, FL</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Titan Times is the student-run news site for University High School in Orange City, Florida, covering campus life, Titans sports, and Volusia County news." />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <meta name="description" content="Titan Times is the student-run news site for University High School in Orange City, Florida. Covering campus life, Titans sports, Volusia County news, and student resources." />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <style>
     :root {
       --titan-orange: #f97316;
-      --titan-dark: #111827;
+      --titan-orange-deep: #ea580c;
+      --titan-gray-dark: #111827;
       --titan-gray: #6b7280;
-      --bg: #020817;
-      --card-bg: #0b1020;
-      --border-subtle: rgba(148, 163, 253, 0.12);
-      --radius-xl: 22px;
-      --shadow-soft: 0 18px 35px rgba(15, 23, 42, 0.45);
+      --titan-gray-light: #e5e7eb;
+      --bg: #030712;
+      --card-bg: #050816;
+      --border-soft: rgba(148, 163, 253, 0.16);
+      --radius-xl: 20px;
+      --radius-md: 14px;
+      --shadow-soft: 0 14px 32px rgba(15, 23, 42, 0.4);
       --transition-fast: 0.2s ease;
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
       font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: radial-gradient(circle at top left, #111827 0, #020817 40%, #000 100%);
-      color: #e5e7eb;
-      line-height: 1.6;
+      background:
+        radial-gradient(circle at top left, rgba(249,115,22,0.03), transparent 55%),
+        radial-gradient(circle at top right, rgba(148,163,253,0.03), transparent 55%),
+        var(--bg);
+      color: var(--titan-gray-light);
       -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
     }
 
     a {
@@ -43,64 +49,58 @@
     }
 
     .page {
-      max-width: 1240px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 18px 18px 40px;
     }
 
-    /* Top Bar */
+    /* Top strip */
     .top-bar {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      gap: 18px;
-      font-size: 0.78rem;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.7rem;
       color: var(--titan-gray);
-      padding-bottom: 6px;
-    }
-
-    .top-bar span {
-      opacity: 0.9;
+      margin-bottom: 8px;
     }
 
     /* Header / Nav */
     header {
-      background: rgba(9, 9, 11, 0.98);
+      background: rgba(7, 11, 20, 0.98);
       border-radius: var(--radius-xl);
-      padding: 18px 20px 16px;
+      padding: 14px 18px;
+      border: 1px solid var(--border-soft);
       box-shadow: var(--shadow-soft);
-      border: 1px solid var(--border-subtle);
-      backdrop-filter: blur(18px);
-      position: sticky;
-      top: 10px;
-      z-index: 40;
-    }
-
-    .nav-row {
       display: flex;
-      align-items: center;
+      flex-wrap: wrap;
       justify-content: space-between;
-      gap: 18px;
+      align-items: center;
+      gap: 14px;
+      position: sticky;
+      top: 8px;
+      z-index: 40;
+      backdrop-filter: blur(18px);
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
 
     .brand-logo {
       width: 32px;
       height: 32px;
       border-radius: 10px;
-      background: radial-gradient(circle at 30% 0, #f97316, #ea580c 40%, #111827 100%);
+      background: radial-gradient(circle at 30% 0, #ffffff, var(--titan-orange) 40%, var(--titan-gray-dark) 100%);
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 800;
       font-size: 1.1rem;
-      color: #f9fafb;
-      box-shadow: 0 8px 20px rgba(248, 250, 252, 0.12);
+      color: #111827;
+      box-shadow: 0 8px 20px rgba(249, 115, 22, 0.35);
     }
 
     .brand-text h1 {
@@ -108,22 +108,23 @@
       font-size: 1.4rem;
       font-weight: 800;
       letter-spacing: 0.04em;
-      text-transform: uppercase;
       color: #f9fafb;
+      text-transform: uppercase;
     }
 
     .brand-text span {
       display: block;
-      font-size: 0.65rem;
-      text-transform: uppercase;
+      font-size: 0.64rem;
       color: var(--titan-gray);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
     }
 
     nav {
       display: flex;
-      gap: 14px;
       flex-wrap: wrap;
-      font-size: 0.78rem;
+      gap: 10px;
+      font-size: 0.75rem;
     }
 
     nav a {
@@ -132,13 +133,13 @@
       border: 1px solid transparent;
       color: #9ca3af;
       transition: var(--transition-fast);
-      text-decoration: none;
     }
 
     nav a:hover {
+      border-color: rgba(249, 115, 22, 0.6);
       color: #f9fafb;
-      border-color: rgba(249, 115, 22, 0.5);
-      background: rgba(15, 23, 42, 0.95);
+      background: #020817;
+      text-decoration: none;
     }
 
     .cta-btn {
@@ -147,106 +148,97 @@
       background: var(--titan-orange);
       color: #111827;
       font-weight: 700;
+      font-size: 0.75rem;
       border: none;
       cursor: pointer;
-      font-size: 0.78rem;
-      box-shadow: 0 8px 20px rgba(249, 115, 22, 0.3);
-      transition: var(--transition-fast);
-      text-decoration: none;
+      box-shadow: 0 8px 22px rgba(249, 115, 22, 0.35);
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      transition: var(--transition-fast);
+      text-decoration: none;
     }
 
     .cta-btn:hover {
       transform: translateY(-1px);
-      box-shadow: 0 12px 26px rgba(249, 115, 22, 0.35);
+      box-shadow: 0 12px 26px rgba(249, 115, 22, 0.4);
       text-decoration: none;
     }
 
-    /* Hero */
+    /* Hero layout */
     .hero {
       display: grid;
-      grid-template-columns: 2.1fr 1.4fr;
-      gap: 22px;
-      margin-top: 20px;
+      grid-template-columns: minmax(0, 2.2fr) minmax(260px, 1.4fr);
+      gap: 18px;
+      margin-top: 18px;
       align-items: stretch;
     }
 
     .hero-main {
-      background: linear-gradient(
-          to bottom,
-          rgba(24, 24, 27, 0.96),
-          rgba(9, 9, 11, 0.98)
-        );
+      background: var(--card-bg);
       border-radius: var(--radius-xl);
-      padding: 22px 22px 18px;
-      border: 1px solid var(--border-subtle);
+      padding: 18px 18px 14px;
+      border: 1px solid var(--border-soft);
       box-shadow: var(--shadow-soft);
-      position: relative;
-      overflow: hidden;
     }
 
     .hero-kicker {
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       text-transform: uppercase;
       letter-spacing: 0.18em;
       color: var(--titan-orange);
-      font-weight: 700;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .hero-title {
       font-family: "Montserrat", sans-serif;
-      font-size: 1.9rem;
+      font-size: 1.8rem;
       font-weight: 800;
       color: #f9fafb;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .hero-sub {
-      font-size: 0.86rem;
+      font-size: 0.85rem;
       color: #9ca3af;
-      margin-bottom: 14px;
+      margin-bottom: 10px;
     }
 
     .hero-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 7px;
-      margin-bottom: 12px;
-      font-size: 0.66rem;
+      gap: 6px;
+      margin-bottom: 10px;
+      font-size: 0.62rem;
     }
 
-    .hero-tag {
+    .tag {
       padding: 4px 9px;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 253, 0.18);
+      border: 1px solid rgba(75, 85, 99, 0.9);
       color: #9ca3af;
-      backdrop-filter: blur(10px);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
     }
 
-    .hero-meta {
+    .hero-note {
       font-size: 0.68rem;
       color: var(--titan-gray);
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
     }
 
     .hero-side {
       display: grid;
-      grid-template-rows: 1.5fr 1.3fr;
       gap: 10px;
+      grid-template-rows: auto auto;
     }
 
     .card {
-      background: radial-gradient(circle at top, #0f172a, #020817);
+      background: var(--card-bg);
       border-radius: var(--radius-xl);
-      padding: 14px 14px 11px;
-      border: 1px solid var(--border-subtle);
+      padding: 12px 12px 10px;
+      border: 1px solid var(--border-soft);
       box-shadow: var(--shadow-soft);
-      font-size: 0.75rem;
+      font-size: 0.72rem;
     }
 
     .card-header {
@@ -254,107 +246,109 @@
       justify-content: space-between;
       align-items: baseline;
       gap: 10px;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .card-title {
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: #e5e7eb;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    .card-label {
-      font-size: 0.6rem;
-      color: var(--titan-orange);
-      text-transform: uppercase;
-    }
-
-    .news-list {
-      list-style: none;
-      display: grid;
-      gap: 6px;
-      margin-top: 2px;
-    }
-
-    .news-list li a {
-      color: #9ca3af;
-      font-size: 0.72rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .news-list li a span.dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 999px;
-      background: var(--titan-orange);
-      display: inline-block;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.64rem;
-      padding: 4px 9px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 253, 0.18);
-      color: #9ca3af;
-    }
-
-    /* Content Grid */
-    .sections {
-      display: grid;
-      grid-template-columns: 2.2fr 1.6fr;
-      gap: 22px;
-      margin-top: 26px;
-    }
-
-    .section-block {
-      margin-bottom: 18px;
-    }
-
-    .section-title-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 10px;
-      margin-bottom: 8px;
-    }
-
-    .section-title {
-      font-size: 0.88rem;
+      font-size: 0.78rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.16em;
       color: #9ca3af;
     }
 
-    .section-kicker {
-      font-size: 0.68rem;
+    .card-label {
+      font-size: 0.62rem;
       color: var(--titan-orange);
       text-transform: uppercase;
+    }
+
+    .pill {
+      padding: 3px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(75, 85, 99, 0.9);
+      font-size: 0.6rem;
+      color: #9ca3af;
+    }
+
+    ul.clean-list {
+      list-style: none;
+      display: grid;
+      gap: 4px;
+      margin-top: 2px;
+    }
+
+    ul.clean-list li a {
+      color: #9ca3af;
+      font-size: 0.7rem;
+    }
+
+    ul.clean-list li a span.dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 999px;
+      display: inline-block;
+      background: var(--titan-orange);
+      margin-right: 5px;
+    }
+
+    /* Sections layout */
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 2.2fr) minmax(260px, 1.4fr);
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .section {
+      margin-bottom: 18px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .section-kicker {
+      font-size: 0.62rem;
+      color: var(--titan-orange);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .section-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #9ca3af;
+    }
+
+    .badge {
+      font-size: 0.6rem;
+      padding: 3px 7px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 253, 0.25);
+      color: #9ca3af;
     }
 
     .grid-cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-      gap: 10px;
+      gap: 8px;
     }
 
     .mini-card {
-      background: var(--card-bg);
-      border-radius: 16px;
-      padding: 10px 10px 8px;
-      border: 1px solid rgba(75, 85, 99, 0.6);
+      background: #020817;
+      border-radius: var(--radius-md);
+      padding: 9px 9px 7px;
+      border: 1px solid rgba(75, 85, 99, 0.7);
       font-size: 0.7rem;
       transition: var(--transition-fast);
       cursor: default;
-      position: relative;
-      overflow: hidden;
     }
 
     .mini-card:hover {
@@ -367,84 +361,72 @@
       font-size: 0.58rem;
       text-transform: uppercase;
       color: var(--titan-orange);
-      margin-bottom: 3px;
+      margin-bottom: 2px;
       letter-spacing: 0.12em;
     }
 
     .mini-title {
       font-weight: 600;
-      color: #e5e7eb;
-      margin-bottom: 3px;
-      font-size: 0.75rem;
+      font-size: 0.74rem;
+      color: #f9fafb;
+      margin-bottom: 2px;
     }
 
-    .mini-meta {
-      font-size: 0.6rem;
+    .mini-text {
+      font-size: 0.66rem;
       color: #9ca3af;
     }
 
     .mini-link {
       display: inline-flex;
-      margin-top: 4px;
-      font-size: 0.6rem;
-      color: #9ca3af;
-      gap: 5px;
+      gap: 4px;
       align-items: center;
-    }
-
-    .badge {
-      display: inline-flex;
-      padding: 3px 7px;
-      border-radius: 999px;
-      font-size: 0.56rem;
-      border: 1px solid rgba(148, 163, 253, 0.25);
-      color: #9ca3af;
-      margin-left: 4px;
+      margin-top: 3px;
+      font-size: 0.62rem;
+      color: var(--titan-orange);
     }
 
     /* Sidebar widgets */
     .widget {
       background: var(--card-bg);
       border-radius: var(--radius-xl);
-      padding: 12px 12px 10px;
-      border: 1px solid var(--border-subtle);
+      padding: 10px 10px 8px;
+      border: 1px solid var(--border-soft);
       box-shadow: var(--shadow-soft);
-      font-size: 0.72rem;
-      margin-bottom: 14px;
+      font-size: 0.7rem;
+      margin-bottom: 10px;
     }
 
     .widget h3 {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       color: #9ca3af;
       margin-bottom: 4px;
     }
 
     .widget p {
-      font-size: 0.68rem;
+      font-size: 0.66rem;
       color: #9ca3af;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
     }
 
     .widget ul {
       list-style: none;
       display: grid;
-      gap: 4px;
-      margin-top: 2px;
+      gap: 3px;
     }
 
     .widget ul li a {
-      font-size: 0.68rem;
+      font-size: 0.66rem;
       color: #9ca3af;
     }
 
-    /* Submit form */
     .submit-form {
       display: grid;
-      gap: 6px;
-      margin-top: 6px;
+      gap: 5px;
+      margin-top: 4px;
     }
 
     .submit-form input,
@@ -453,59 +435,98 @@
       padding: 6px 7px;
       border-radius: 10px;
       border: 1px solid rgba(75, 85, 99, 0.9);
-      background: rgba(9, 9, 11, 0.98);
-      color: #e5e7eb;
-      font-size: 0.7rem;
+      background: #020817;
+      color: #f9fafb;
+      font-size: 0.66rem;
     }
 
     .submit-form textarea {
-      min-height: 70px;
+      min-height: 65px;
       resize: vertical;
     }
 
     .submit-form button {
-      justify-content: center;
       width: 100%;
+      justify-content: center;
       margin-top: 2px;
+    }
+
+    /* Weather card */
+    .weather-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 9px;
+      border-radius: var(--radius-md);
+      background: #020817;
+      border: 1px solid rgba(75,85,99,0.9);
+      margin-top: 4px;
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+
+    .weather-left {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .weather-label {
+      font-size: 0.58rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--titan-orange);
+    }
+
+    .weather-city {
+      font-size: 0.7rem;
+      color: #f9fafb;
+      font-weight: 500;
+    }
+
+    .weather-note {
+      font-size: 0.6rem;
+      color: #9ca3af;
+    }
+
+    .weather-temp {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--titan-orange);
+    }
+
+    .weather-card:hover {
+      border-color: var(--titan-orange);
+      box-shadow: var(--shadow-soft);
+      transform: translateY(-1px);
     }
 
     /* Footer */
     footer {
-      margin-top: 24px;
-      padding: 14px 0 4px;
-      font-size: 0.62rem;
-      color: #6b7280;
+      margin-top: 22px;
+      padding-top: 10px;
       border-top: 1px solid rgba(75, 85, 99, 0.7);
+      font-size: 0.6rem;
+      color: var(--titan-gray);
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 10px;
       justify-content: space-between;
-    }
-
-    footer span {
-      opacity: 0.9;
     }
 
     footer a {
       color: #9ca3af;
     }
 
-    /* Responsive */
-    @media (max-width: 840px) {
+    @media (max-width: 860px) {
       header {
         position: static;
-      }
-      .nav-row {
         flex-direction: column;
         align-items: flex-start;
       }
-      .hero {
-        grid-template-columns: 1fr;
-      }
-      .hero-side {
-        grid-template-rows: auto;
-      }
-      .sections {
+      .hero,
+      .layout {
         grid-template-columns: 1fr;
       }
     }
@@ -522,346 +543,323 @@
 </head>
 <body>
 <div class="page">
-  <!-- Top utility bar -->
+  <!-- Top info strip -->
   <div class="top-bar">
-    <span>Titan Times • University High School • Orange City, FL</span>
-    <span>Powered by student journalists • Stay informed. Stay Titan Strong.</span>
+    <span>Titan Times • Student-run publication • University High School, Orange City, FL</span>
+    <span>News • Sports • Campus Life • Volusia Community</span>
   </div>
 
   <!-- Header / Nav -->
   <header>
-    <div class="nav-row">
-      <div class="brand">
-        <div class="brand-logo">TT</div>
-        <div class="brand-text">
-          <h1>Titan Times</h1>
-          <span>The Student Voice of University High School</span>
-        </div>
+    <div class="brand">
+      <div class="brand-logo">TT</div>
+      <div class="brand-text">
+        <h1>Titan Times</h1>
+        <span>The Student Voice of the Titans</span>
       </div>
-      <nav>
-        <a href="#top">Top Stories</a>
-        <a href="#sports">Titans Sports</a>
-        <a href="#campus">Campus Life</a>
-        <a href="#volusia-events">Volusia Events</a>
-        <a href="#local-news">Local News</a>
-        <a href="#about">About</a>
-        <a href="#submit" class="cta-btn">Submit a Story ▸</a>
-      </nav>
     </div>
+    <nav>
+      <a href="#top">Top Stories</a>
+      <a href="#sports">Titans Sports</a>
+      <a href="#campus">Campus Life</a>
+      <a href="#resources">Student Resources</a>
+      <a href="#volusia">Volusia News</a>
+      <a href="#submit" class="cta-btn">Submit a Story ▸</a>
+    </nav>
   </header>
 
   <!-- Hero -->
-  <main>
-    <section class="hero" id="top">
+  <main id="top">
+    <section class="hero">
+      <!-- Left: Intro -->
       <div class="hero-main">
         <div class="hero-kicker">Welcome to TitanTimes.com</div>
-        <div class="hero-title">Your Hub for Titans News, Sports & Volusia Stories</div>
+        <div class="hero-title">Clean. Credible. All Things Titans.</div>
         <p class="hero-sub">
-          Covering life on campus at University High School in Orange City, Florida —
-          from classrooms and clubs to Titans athletics and community events across Volusia County.
+          Titan Times is the digital newsroom for University High School in Orange City, Florida —
+          covering Titans sports, campus life, academic highlights, and key stories from across Volusia County.
         </p>
         <div class="hero-tags">
-          <div class="hero-tag">Breaking campus updates</div>
-          <div class="hero-tag">Titans game coverage</div>
-          <div class="hero-tag">Student voices & features</div>
-          <div class="hero-tag">Volusia County headlines</div>
+          <span class="tag">Titans Athletics</span>
+          <span class="tag">Student Features</span>
+          <span class="tag">Clubs & Activities</span>
+          <span class="tag">Local Volusia News</span>
         </div>
-        <div class="hero-meta">
-          <span>Founded 2025 • Independent student publication</span>
-          <span>Serving University High School Titans & West Volusia community</span>
-        </div>
+        <p class="hero-note">
+          Full student-written articles are coming online soon. Until then, use Titan Times as your
+          launchpad for official school tools, trusted local news, and Titans sports coverage.
+        </p>
       </div>
 
+      <!-- Right: Weather + Quick Links -->
       <aside class="hero-side">
-        <!-- Titans Sports Snapshot -->
-        <div class="card" id="sports-highlight">
-          <div class="card-header">
-            <div>
-              <div class="card-title">Titans Sports Center</div>
-              <div class="card-label">Scores • Schedules • Highlights</div>
-            </div>
-            <span class="pill">Home of the Titans</span>
-          </div>
-          <ul class="news-list">
-            <li>
-              <a href="https://www.uhstitansathletics.com/" target="_blank" rel="noopener">
-                <span class="dot"></span>
-                Official Titans Athletics hub — scores, rosters & schedules.
-              </a>
-            </li>
-            <li>
-              <a href="#sports">
-                <span class="dot"></span>
-                Student-written recaps coming soon: fall, winter & spring sports.
-              </a>
-            </li>
-            <li>
-              <span class="pill">Want to cover a game? Join the Titan Times sports desk.</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Quick Local Feeds Snapshot -->
+        <!-- Weather card -->
         <div class="card">
           <div class="card-header">
             <div>
-              <div class="card-title">Around Volusia</div>
-              <div class="card-label">Live Local Headlines</div>
+              <div class="card-title">Orange City Weather</div>
+              <div class="card-label">Plan your game day & events</div>
             </div>
           </div>
-          <ul class="news-list" id="quick-local">
+          <div class="weather-card"
+               onclick="window.open('https://weather.com/weather/today/l/Orange+City+Florida+32763', '_blank')">
+            <div class="weather-left">
+              <div class="weather-label">Live Forecast</div>
+              <div class="weather-city">Orange City, FL 32763</div>
+              <div class="weather-note">Tap for full details on Weather.com</div>
+            </div>
+            <div class="weather-temp">View ▶</div>
+          </div>
+        </div>
+
+        <!-- Titans Sports highlight -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Titans Sports Hub</div>
+              <div class="card-label">Scores • Schedules • Rosters</div>
+            </div>
+            <span class="pill">Official + Student Coverage</span>
+          </div>
+          <ul class="clean-list">
             <li>
-              <a href="#local-news">
-                <span class="dot"></span>
-                Curated Volusia County news & alerts for UHS families.
+              <a href="https://www.uhstitansathletics.com/" target="_blank" rel="noopener">
+                <span class="dot"></span> Official Titans Athletics Website
               </a>
             </li>
             <li>
-              <a href="https://www.beacononlinenews.com/" target="_blank" rel="noopener">
-                <span class="dot"></span>
-                West Volusia Beacon – community news & events.
-              </a>
-            </li>
-            <li>
-              <a href="https://mynews13.com/fl/orlando/news/volusia" target="_blank" rel="noopener">
-                <span class="dot"></span>
-                Spectrum News 13 Volusia coverage.
-              </a>
+              <span style="font-size:0.64rem;color:#9ca3af;">
+                Titan Times will feature game recaps, player spotlights, and photo galleries here.
+                Interested in reporting? Talk to the journalism advisor.
+              </span>
             </li>
           </ul>
         </div>
       </aside>
     </section>
 
-    <!-- Main sections -->
-    <section class="sections">
-      <!-- Left Column: Top Stories, Campus, Sports -->
+    <!-- Content layout -->
+    <section class="layout">
+      <!-- Main column -->
       <div>
-        <!-- Top Stories (placeholder content while stories built) -->
-        <div class="section-block">
-          <div class="section-title-row">
+        <!-- Top Stories placeholder -->
+        <div class="section">
+          <div class="section-header">
             <div>
-              <div class="section-kicker">Top of the Fold</div>
-              <div class="section-title">Featured & Upcoming Coverage</div>
+              <div class="section-kicker">Featured</div>
+              <div class="section-title">Top Stories In Development</div>
             </div>
-            <span class="badge">Story slots ready</span>
+            <span class="badge">Article slots ready</span>
           </div>
           <div class="grid-cards">
             <article class="mini-card">
-              <div class="mini-label">Academics</div>
-              <div class="mini-title">UHS Titans celebrate academic excellence</div>
-              <div class="mini-meta">
-                Snapshot: University High continues to grow as a leading
-                Volusia County campus with strong programs, dedicated staff, and
-                a focus on “Knowledge, Strength, Courage, Respect.”
+              <div class="mini-label">Campus</div>
+              <div class="mini-title">Inside University High</div>
+              <div class="mini-text">
+                Overview of UHS programs, pathways, and campus life at
+                1000 W Rhode Island Ave — highlighting academics, arts, and CTE opportunities.
               </div>
-              <div class="mini-link">
-                Full feature coming soon
-              </div>
+              <div class="mini-link">Full feature coming soon</div>
             </article>
             <article class="mini-card">
-              <div class="mini-label">Student Life</div>
-              <div class="mini-title">Clubs, arts & student voices</div>
-              <div class="mini-meta">
-                From band and theatre to robotics and honor societies,
-                Titan Times will spotlight the students shaping campus culture.
+              <div class="mini-label">Student Voices</div>
+              <div class="mini-title">Opinion & Editorial</div>
+              <div class="mini-text">
+                A curated space where Titans discuss issues that matter —
+                school policies, technology, culture, and community.
               </div>
-              <div class="mini-link">Submit your club update ▸</div>
+              <div class="mini-link">Submit your perspective ▸</div>
             </article>
             <article class="mini-card">
               <div class="mini-label">Community</div>
-              <div class="mini-title">Titans in West Volusia</div>
-              <div class="mini-meta">
-                Coverage of service projects, local partnerships,
-                and Orange City stories that matter to UHS families.
+              <div class="mini-title">Titans in Volusia</div>
+              <div class="mini-text">
+                Stories connecting UHS students with local organizations, events, and service opportunities across Volusia County.
               </div>
-              <div class="mini-link">Share a community story ▸</div>
             </article>
           </div>
         </div>
 
-        <!-- Titans Sports Section -->
-        <div class="section-block" id="sports">
-          <div class="section-title-row">
+        <!-- Titans Sports block -->
+        <div class="section" id="sports">
+          <div class="section-header">
             <div>
               <div class="section-kicker">Titans Sports</div>
-              <div class="section-title">Scores, Schedules & Sideline Stories</div>
+              <div class="section-title">Game Day Central</div>
             </div>
             <span class="badge">Student reporters wanted</span>
           </div>
           <div class="grid-cards">
             <article class="mini-card">
-              <div class="mini-label">Game Day Central</div>
-              <div class="mini-title">Varsity & JV schedules</div>
-              <div class="mini-meta">
-                Stay synced with official Titans schedules for football,
-                volleyball, basketball, soccer, baseball, softball, track,
-                and more.
+              <div class="mini-label">Schedules</div>
+              <div class="mini-title">All Teams • One Click</div>
+              <div class="mini-text">
+                Use the official athletics portal for up-to-date schedules, rosters,
+                and results for all Titans teams.
               </div>
-              <a class="mini-link"
-                 href="https://www.uhstitansathletics.com/"
-                 target="_blank" rel="noopener">
-                View official athletics site ↗
+              <a class="mini-link" href="https://www.uhstitansathletics.com/" target="_blank" rel="noopener">
+                Open Titans Athletics ↗
               </a>
             </article>
             <article class="mini-card">
-              <div class="mini-label">Inside the Huddle</div>
-              <div class="mini-title">Player spotlights & coach interviews</div>
-              <div class="mini-meta">
-                Reserved space for Q&As, photo galleries, and post-game recaps
-                produced by Titan Times student journalists.
+              <div class="mini-label">Highlights</div>
+              <div class="mini-title">Recaps & Spotlights</div>
+              <div class="mini-text">
+                Reserved for student-written coverage: weekly roundups, standout performances,
+                coach interviews, and photo essays.
               </div>
-              <div class="mini-link">Pitch a Titans sports story ▸</div>
+              <div class="mini-link">Pitch a sports story ▸</div>
             </article>
             <article class="mini-card">
-              <div class="mini-label">Titan Pride</div>
-              <div class="mini-title">Fans, spirit & student section</div>
-              <div class="mini-meta">
-                Highlighting pep rallies, theme nights, marching band,
-                cheer, and the loudest student section in Volusia County.
+              <div class="mini-label">Spirit</div>
+              <div class="mini-title">Titan Pride Section</div>
+              <div class="mini-text">
+                Showcase the band, cheer, color guard, and the loudest student section in Volusia.
               </div>
             </article>
           </div>
         </div>
 
         <!-- Campus Life -->
-        <div class="section-block" id="campus">
-          <div class="section-title-row">
+        <div class="section" id="campus">
+          <div class="section-header">
             <div>
               <div class="section-kicker">Campus Life</div>
-              <div class="section-title">What’s Happening at University High</div>
+              <div class="section-title">Events, Clubs & Involvement</div>
             </div>
           </div>
           <div class="grid-cards">
             <article class="mini-card">
               <div class="mini-label">Events</div>
-              <div class="mini-title">Key dates & on-campus events</div>
-              <div class="mini-meta">
-                Pull key dates from the Volusia County Schools & UHS event calendars:
-                exams, performances, showcases, SAC/PTA, and more.
+              <div class="mini-title">School Calendar</div>
+              <div class="mini-text">
+                Important dates, testing windows, performances, and special events
+                connected directly to official school and district calendars.
               </div>
-              <div class="mini-link">Linked to official calendars ▸</div>
+              <a class="mini-link"
+                 href="https://www.uhstitans.com/"
+                 target="_blank" rel="noopener">
+                Visit UHS Site ↗
+              </a>
             </article>
             <article class="mini-card">
-              <div class="mini-label">Voices</div>
-              <div class="mini-title">Opinion & Editorial</div>
-              <div class="mini-meta">
-                A dedicated space for thoughtful student perspectives on school life,
-                culture, technology, and the wider world.
+              <div class="mini-label">Activities</div>
+              <div class="mini-title">Clubs & After-School Programs</div>
+              <div class="mini-text">
+                Links to information on clubs, organizations, and after-school opportunities
+                supported by University High and Volusia County Schools.
+              </div>
+              <div class="mini-link">
+                See resources in Student Links →
               </div>
             </article>
             <article class="mini-card">
               <div class="mini-label">Spotlight</div>
-              <div class="mini-title">Teachers & Titans making an impact</div>
-              <div class="mini-meta">
-                Short profiles recognizing achievements in and out of the classroom.
+              <div class="mini-title">Titans Making an Impact</div>
+              <div class="mini-text">
+                Future home for student and staff profiles, scholarships, awards, and creative work.
               </div>
             </article>
           </div>
         </div>
       </div>
 
-      <!-- Right Column: Volusia Events, Local News, Submit, About -->
+      <!-- Sidebar column: Resources, Volusia, Submit, About -->
       <aside>
-        <!-- Volusia Events -->
-        <div class="widget" id="volusia-events">
-          <h3>Volusia County Events</h3>
-          <p>
-            Quick links to official calendars so students & families never miss a key date.
-          </p>
+        <!-- Student & Parent Resources -->
+        <div class="widget" id="resources">
+          <h3>Student & Parent Links</h3>
+          <p>Fast access to tools Titans and families actually use.</p>
           <ul>
             <li>
-              <a href="https://www.vcsedu.org/directory/departments/community-information-services/calendars"
-                 target="_blank" rel="noopener">
-                Volusia County Schools District Calendar ↗
+              <a href="https://www.uhstitans.com/" target="_blank" rel="noopener">
+                UHS Official Website (Announcements & Info) ↗
               </a>
             </li>
             <li>
-              <a href="https://www.uhstitans.com/school-event-calendar"
-                 target="_blank" rel="noopener">
-                University High School Event Calendar ↗
+              <a href="https://www.uhstitansathletics.com/" target="_blank" rel="noopener">
+                Titans Athletics Portal ↗
               </a>
             </li>
             <li>
-              <a href="https://www.orangecityfl.gov/" target="_blank" rel="noopener">
-                City of Orange City Events & Notices ↗
+              <a href="https://www.vcsedu.org" target="_blank" rel="noopener">
+                Volusia County Schools District Site ↗
+              </a>
+            </li>
+            <li>
+              <a href="https://www.uhstitans.com/parents-students" target="_blank" rel="noopener">
+                Parent & Student Resources (payments, menus, tech help) ↗
+              </a>
+            </li>
+            <li>
+              <a href="https://www.vcsedu.org/directory/departments/student-services/school-choice-department/school-choice-process"
+                 target="_blank" rel="noopener">
+                School Choice & Enrollment Information ↗
+              </a>
+            </li>
+            <li>
+              <a href="https://www.vcsedu.org/directory/departments/teaching-leading-and-learning/before-the-bell-and-extended-day-enrichment-programs"
+                 target="_blank" rel="noopener">
+                Before the Bell & Extended Day Programs (EDEP) ↗
               </a>
             </li>
           </ul>
         </div>
 
-        <!-- Local News Feed (auto-populate-ready) -->
-        <div class="widget" id="local-news">
-          <h3>Local News Feed</h3>
-          <p>
-            Curated headlines from trusted West Volusia & Central Florida news partners.
-          </p>
-          <ul id="local-news-list"
-              data-rss-1=""
-              data-rss-2=""
-              data-rss-3="">
-            <!--
-              To enable automatic feeds:
-              - Add RSS URLs to data-rss-* attributes above (e.g. Beacon, Spectrum News 13, etc.)
-              - This script will fetch the latest items via rss2json.
-            -->
+        <!-- Volusia News -->
+        <div class="widget" id="volusia">
+          <h3>Volusia County News</h3>
+          <p>Stay informed with trusted local coverage while Titan Times builds its local desk.</p>
+          <ul>
             <li>
               <a href="https://www.beacononlinenews.com/" target="_blank" rel="noopener">
-                West Volusia Beacon – West Volusia community coverage ↗
+                West Volusia Beacon ↗
               </a>
             </li>
             <li>
-              <a href="https://mynews13.com/fl/orlando/news/volusia"
-                 target="_blank" rel="noopener">
-                Spectrum News 13 – Volusia County section ↗
+              <a href="https://mynews13.com/fl/orlando/news/volusia" target="_blank" rel="noopener">
+                Spectrum News 13 – Volusia Section ↗
               </a>
             </li>
             <li>
-              <a href="https://www.fox35orlando.com/tag/us/fl/volusia-county"
-                 target="_blank" rel="noopener">
-                FOX 35 Orlando – Volusia County headlines ↗
+              <a href="https://www.fox35orlando.com/tag/us/fl/volusia-county" target="_blank" rel="noopener">
+                FOX 35 Orlando – Volusia County ↗
               </a>
             </li>
           </ul>
-          <p style="font-size:0.6rem; margin-top:4px; color:#6b7280;">
-            External headlines are provided via their official sites. Titan Times does not
-            edit third-party content.
-          </p>
         </div>
 
-        <!-- Submit Story / Tip -->
+        <!-- Submit -->
         <div class="widget" id="submit">
-          <h3>Submit a Story, Photo or Tip</h3>
+          <h3>Submit a Story or Tip</h3>
           <p>
-            UHS students & staff: share news, event info, scores, photos,
-            or story ideas with the Titan Times editorial team.
+            UHS students and staff: share scores, event recaps, photos, or story ideas with the Titan Times editorial team.
           </p>
           <form class="submit-form" action="#" method="post">
             <input type="text" name="name" placeholder="Your name" required />
             <input type="email" name="email" placeholder="Your email" required />
-            <input type="text" name="affiliation" placeholder="Grade / Role (optional)" />
-            <textarea name="message" placeholder="Story idea, recap, event, or tip..." required></textarea>
+            <input type="text" name="role" placeholder="Grade / Role (optional)" />
+            <textarea name="message" placeholder="Story idea, recap, or tip..." required></textarea>
             <button type="submit" class="cta-btn">Send to Titan Times ▸</button>
           </form>
-          <p style="font-size:0.6rem; margin-top:4px;">
-            For official school matters, please contact University High School directly.
+          <p style="font-size:0.58rem;color:#6b7280;margin-top:4px;">
+            This form is a placeholder. For official school matters, please contact University High directly.
           </p>
         </div>
 
         <!-- About -->
-        <div class="widget" id="about">
+        <div class="widget">
           <h3>About Titan Times</h3>
           <p>
-            Titan Times is a student-produced digital publication for
-            <strong>University High School, Orange City, Florida</strong>, home of the Titans.
+            Titan Times is a student-run online publication serving
+            <strong>University High School in Orange City, Florida</strong>, home of the Titans.
           </p>
           <p>
-            Our mission: highlight student achievement, provide accurate information,
-            elevate campus voices, and connect Titans with the wider Volusia community.
+            Our goals: highlight student achievement, provide reliable information,
+            support campus involvement, and connect Titans with the Volusia community.
           </p>
-          <p style="font-size:0.6rem; color:#6b7280;">
-            Titan Times operates in coordination with UHS staff advisors and follows
-            Volusia County Schools guidelines for student media.
+          <p style="font-size:0.6rem;color:#6b7280;margin-top:3px;">
+            Titan Times is independent student media and is not an official press release channel of Volusia County Schools.
           </p>
         </div>
       </aside>
@@ -870,61 +868,15 @@
 
   <!-- Footer -->
   <footer>
-    <span>
-      © <span id="year"></span> Titan Times • University High School • 1000 W Rhode Island Ave, Orange City, FL 32763
-    </span>
-    <span>
-      Not an official Volusia County Schools news release. 
-      External links belong to their respective organizations.
-    </span>
-    <span>
-      Contact Editorial: <a href="mailto:editor@titantimes.com">editor@titantimes.com</a>
-    </span>
+    <span>© <span id="year"></span> Titan Times • University High School, Orange City, FL 32763</span>
+    <span>Editorial contact: <a href="mailto:editor@titantimes.com">editor@titantimes.com</a></span>
+    <span>Built by Titans. Powered by student journalism.</span>
   </footer>
 </div>
 
-<!-- Lightweight JS: year + (optional) RSS integration for static hosting like GoDaddy -->
 <script>
   // Auto year
   document.getElementById("year").textContent = new Date().getFullYear();
-
-  // Optional: Simple RSS loader using rss2json for up to 3 sources.
-  // 1) Add RSS URLs as data-rss-* on #local-news-list.
-  // 2) This will append top headlines under Local News Feed.
-  (function() {
-    var list = document.getElementById("local-news-list");
-    if (!list) return;
-
-    var rssUrls = [
-      list.getAttribute("data-rss-1"),
-      list.getAttribute("data-rss-2"),
-      list.getAttribute("data-rss-3")
-    ].filter(Boolean);
-
-    if (!rssUrls.length) return;
-
-    rssUrls.forEach(function(url) {
-      var apiUrl = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(url);
-      fetch(apiUrl)
-        .then(function(res) { return res.json(); })
-        .then(function(data) {
-          if (!data || !data.items) return;
-          data.items.slice(0, 3).forEach(function(item) {
-            var li = document.createElement("li");
-            var a = document.createElement("a");
-            a.href = item.link;
-            a.target = "_blank";
-            a.rel = "noopener";
-            a.innerHTML = '<span class="dot"></span>' + (item.title || "View update");
-            li.appendChild(a);
-            list.appendChild(li);
-          });
-        })
-        .catch(function() {
-          // Fail silently; base static links remain.
-        });
-    });
-  })();
 </script>
 </body>
 </html>
